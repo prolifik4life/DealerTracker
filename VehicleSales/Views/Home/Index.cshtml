@@ -1,0 +1,75 @@
+﻿@model IEnumerable<VehicleSales.Models.VehicleSale>
+@{
+    ViewData["Title"] = "Dealer Track - Vehicle Sales";
+    Layout = "~/Shared/_Layout.cshtml";
+}
+<h2>Vehicle Sales</h2>
+<hr />
+
+@using (Html.BeginForm("Index", "Home", null, FormMethod.Post, null, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    <input type="file" name="upload" id="file" class="inputfile" />
+    <label for="file">Choose a file</label><span>@ViewBag.FileName</span>
+    <div class="most-sold"><span>@ViewBag.MostSoldVehicle </span> is the most sold vehicle.</div>
+</div>
+
+    <div class="form-group">
+        <input type="submit" value="Upload" class="btn btn-default" />
+    </div>
+
+    if (Model != null)
+    {
+        <table>
+                <tr>
+                    <th>
+                        Deal Number
+                    </th>
+
+                    <th>
+                        Customer Name
+                    </th>
+
+                    <th>
+                        Dealership Name
+                    </th>
+
+                    <th>
+                        Vehicle
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                </tr>
+            <tbody>
+                @foreach (VehicleSales.Models.VehicleSale row in Model)
+                {
+                    <tr>
+                        <td>
+                            @row.DealNumber
+                        </td>
+                        <td>
+                            @row.CustomerName
+                        </td>
+                        <td>
+                            @row.DealershipName
+                        </td>
+                        <td>
+                            @row.Vehicle
+                        </td>
+                        <td>
+                            CAD$@row.Price.Remove(row.Price.IndexOf(' '), 1)
+                        </td>
+                        <td>
+                            @row.Date.ToShortDateString()
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+

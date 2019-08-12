@@ -1,0 +1,66 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+th, td{
+    padding:12px !important;
+}
+
+tr:hover{
+    background-color:#a499ad;
+    cursor:pointer;
+}
+table{
+    width:100%;
+}
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: #5a85b5;
+    display: inline-block;
+    cursor:pointer;
+    padding: 5px;
+    width: 147px;
+    text-align: center;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #355c77;
+}
+
+.most-sold{
+    float:right;
+}
+
+.most-sold span{
+    font-weight:600;
+    color: #11063b
+}
