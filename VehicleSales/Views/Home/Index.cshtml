@@ -11,7 +11,10 @@
 <div class="form-group">
     <input type="file" name="upload" id="file" class="inputfile" />
     <label for="file">Choose a file</label><span>@ViewBag.FileName</span>
-    <div class="most-sold"><span>@ViewBag.MostSoldVehicle </span> is the most sold vehicle.</div>
+    @if (Model != null)
+    {
+        <div class="most-sold"><span>@ViewBag.MostSoldVehicle </span> is the most sold vehicle.</div>
+    }
 </div>
 
     <div class="form-group">
