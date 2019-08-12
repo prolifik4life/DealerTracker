@@ -24,9 +24,15 @@ th, td{
     padding:12px !important;
 }
 
-tr:hover{
-    background-color:#a499ad;
-    cursor:pointer;
+.body-content tr:hover {
+    background-color: #a499ad;
+    cursor: pointer;
+}
+.odd-row {
+    background-color: #adacae;
+}
+.even-row {
+    background-color: #cac0d4;
 }
 table{
     width:100%;

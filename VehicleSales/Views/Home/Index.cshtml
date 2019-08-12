@@ -47,10 +47,13 @@
                         Date
                     </th>
                 </tr>
-            <tbody>
+            <tbody class="body-content">
+                @{ 
+                    var index = 1;
+                }
                 @foreach (VehicleSales.Models.VehicleSale row in Model)
                 {
-                    <tr>
+                    <tr class="@Html.Raw(index % 2 == 0 ? "even-row" : "odd-row")">
                         <td>
                             @row.DealNumber
                         </td>
@@ -70,7 +73,8 @@
                             @row.Date.ToShortDateString()
                         </td>
                     </tr>
-                }
+                     ++index;
+                 }
             </tbody>
         </table>
     }
